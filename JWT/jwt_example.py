@@ -25,3 +25,15 @@ def decode_token(token):
         return "Expired token"
     except InvalidTokenError:
         return "Invalid token"
+    
+user_data = {
+    'user_id': 123,
+    'username': 'example_user'
+}
+
+
+token = create_token(user_data)
+print(token)
+
+decoded_token = decode_token(token)
+print(decoded_token)
